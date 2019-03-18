@@ -43,9 +43,10 @@ public class ReverseLinkedList206 {
 		ListNode current = head.next;
 		head.next = null;
 
-		while (current != null) {
+		while (current != null) {// 每次拿两个节点当做head和current，
 
 			ListNode currentNext = current.next;
+			// 当前节点指向前面的节点
 			current.next = head;
 
 			head = current;
