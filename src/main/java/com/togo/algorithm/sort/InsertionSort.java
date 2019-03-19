@@ -3,6 +3,11 @@ package com.togo.algorithm.sort;
 public class InsertionSort extends AbstractSort {
 
 	@Override
+	protected String getName() {
+		return "InsertionSort 插入排序";
+	}
+	
+	@Override
 	protected void sort(int[] nums) {
 
 		for (int i = 1; i < nums.length; i++) {

@@ -2,6 +2,12 @@ package com.togo.algorithm.sort;
 
 public class BubbleSort extends AbstractSort {
 
+	
+	@Override
+	protected String getName() {
+		return "BubbleSort 冒泡排序";
+	}
+
 	public void sort(int[] nums) {
 
 		if (nums == null || nums.length == 0)

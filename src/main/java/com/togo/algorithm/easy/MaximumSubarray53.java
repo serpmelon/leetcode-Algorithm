@@ -59,6 +59,36 @@ public class MaximumSubarray53 {
 
 		return max;
 	}
-	
-	
+
+	public static int maxSubArray(int[] nums) {
+
+		if (nums == null || nums.length == 0)
+			return 0;
+
+		if (nums.length == 1)
+			return nums[0];
+
+		int max = nums[0];
+		int thisMax = 0;
+
+		for (int i = 0; i < nums.length; i++) {
+
+			thisMax += nums[i];
+
+			if (thisMax > max)
+				max = thisMax;
+			else if (thisMax < 0)
+				thisMax = 0;
+		}
+
+		return max;
+	}
+
+	public static void main(String[] args) {
+
+//		int[] a = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+		int[] a = { -3, -2, 0, -1 };
+
+		System.out.println(maxSubArray(a));
+	}
 }
