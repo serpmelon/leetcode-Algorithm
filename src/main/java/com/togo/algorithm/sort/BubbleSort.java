@@ -1,8 +1,23 @@
 package com.togo.algorithm.sort;
 
+/**
+ * 
+ * <p>
+ * Class : com.togo.algorithm.sort.BubbleSort
+ * <p>
+ * Descdription:冒泡排序， 稳定，时间复杂度O(n^2)，空间复杂度O(1)
+ *
+ * @author taiyn
+ * @version 1.0.0
+ *          <p>
+ *          --------------------------------------------------------------<br>
+ *          修改履历：<br>
+ *          <li>2019年3月19日，taiyn，创建文件；<br>
+ *          --------------------------------------------------------------<br>
+ *          </p>
+ */
 public class BubbleSort extends AbstractSort {
 
-	
 	@Override
 	protected String getName() {
 		return "BubbleSort 冒泡排序";
@@ -19,8 +34,8 @@ public class BubbleSort extends AbstractSort {
 
 			for (int j = 0; j < nums.length - i - 1; j++) {
 
-				if(nums[j] > nums[j + 1]) {
-					
+				if (nums[j] > nums[j + 1]) {
+
 					int temp = nums[j + 1];
 					nums[j + 1] = nums[j];
 					nums[j] = temp;

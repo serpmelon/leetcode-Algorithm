@@ -8,8 +8,8 @@ public class TestSort {
 
 	public static void main(String[] args) {
 
-		int n = 100000;
-		int[] a = createArray(n, 0, 1000);
+		int n = 50;
+		int[] a = createArray(n, 0, 100);
 
 		AbstractSort sort = new BubbleSort();
 		sort.sortAndPrint(a.clone());
@@ -21,6 +21,9 @@ public class TestSort {
 		sort.sortAndPrint(a.clone());
 
 		sort = new MergeSort();
+		sort.sortAndPrint(a.clone());
+		
+		sort = new QuickSort();
 		sort.sortAndPrint(a.clone());
 	}
 
