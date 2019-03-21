@@ -1,4 +1,4 @@
-package com.togo.algorithm.easy;
+package com.togo.algorithm.easy.math;
 
 /**
  * 
@@ -17,7 +17,7 @@ package com.togo.algorithm.easy;
  *          --------------------------------------------------------------<br>
  *          </p>
  */
-public class ReverseInteger {
+public class ReverseInteger7 {
 
 	/**
 	 * 

@@ -1,6 +1,6 @@
-package com.togo.algorithm.easy;
+package com.togo.algorithm.easy.link;
 
-import com.togo.algorithm.easy.ReverseLinkedList206.ListNode;
+import com.togo.algorithm.easy.link.ReverseLinkedList206.ListNode;
 
 /**
  * 
@@ -24,7 +24,7 @@ import com.togo.algorithm.easy.ReverseLinkedList206.ListNode;
  *          --------------------------------------------------------------<br>
  *          </p>
  */
-class MergeTwoSortedLists {
+class MergeTwoSortedLists21 {
 
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 

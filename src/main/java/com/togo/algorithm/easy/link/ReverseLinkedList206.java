@@ -1,4 +1,4 @@
-package com.togo.algorithm.easy;
+package com.togo.algorithm.easy.link;
 
 /**
  * 

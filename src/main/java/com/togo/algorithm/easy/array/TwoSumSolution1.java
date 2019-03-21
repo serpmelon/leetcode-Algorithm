@@ -1,4 +1,4 @@
-package com.togo.algorithm.easy;
+package com.togo.algorithm.easy.array;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +30,7 @@ import java.util.Map;
  *          --------------------------------------------------------------<br>
  *          </p>
  */
-public class TwoSumSolution {
+public class TwoSumSolution1 {
 
 	/**
 	 * 

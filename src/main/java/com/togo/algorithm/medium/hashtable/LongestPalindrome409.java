@@ -1,4 +1,4 @@
-package com.togo.algorithm.medium;
+package com.togo.algorithm.medium.hashtable;
 
 /**
  * 
@@ -27,7 +27,7 @@ package com.togo.algorithm.medium;
  *          --------------------------------------------------------------<br>
  *          </p>
  */
-public class LongestPalindromeSolution {
+public class LongestPalindrome409 {
 
 	/**
 	 * 

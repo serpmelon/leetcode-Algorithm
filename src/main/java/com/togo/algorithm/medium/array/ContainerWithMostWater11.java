@@ -1,4 +1,4 @@
-package com.togo.algorithm.medium;
+package com.togo.algorithm.medium.array;
 
 /**
  * 
@@ -19,7 +19,7 @@ package com.togo.algorithm.medium;
  *          --------------------------------------------------------------<br>
  *          </p>
  */
-public class ContainerWithMostWater {
+public class ContainerWithMostWater11 {
 
 	/**
 	 * 
