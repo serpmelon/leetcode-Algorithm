@@ -59,7 +59,7 @@ public class MaximumDepthOfBinaryTree104 {
 		return Math.max(left, right) + 1;
 	}
 
-	public class TreeNode {
+	public static class TreeNode {
 		public int val;
 		public TreeNode left;
 		public TreeNode right;
