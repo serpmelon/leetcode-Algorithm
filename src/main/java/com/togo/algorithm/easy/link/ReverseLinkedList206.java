@@ -91,11 +91,11 @@ public class ReverseLinkedList206 {
 		return newNode;
 	}
 
-	static class ListNode {
-		int val;
-		ListNode next;
+	public static class ListNode {
+		public int val;
+		public ListNode next;
 
-		ListNode(int x) {
+		public ListNode(int x) {
 			val = x;
 		}
 	}
@@ -110,10 +110,6 @@ public class ReverseLinkedList206 {
 		q.next.next.next.next.next = new ListNode(6);
 
 		ListNode a = q;
-		// while (a != null) {
-		// System.out.println(a.val);
-		// a = a.next;
-		// }
 
 		ListNode b = reverseList_1(q);
 		while (b != null) {
