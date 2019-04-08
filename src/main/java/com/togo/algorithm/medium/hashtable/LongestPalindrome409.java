@@ -64,8 +64,8 @@ public class LongestPalindrome409 {
 			// 取两者长度最大
 			int len = Math.max(len0, len1);
 
-			if (len > end - start) {// 长度大于收尾长度则重置收尾位置
-				// 起始位置就是在中心位置向左启动一半的长度
+			if (len > end - start) {// 长度大于首尾长度则重置收尾位置
+				// 起始位置就是在中心位置向左移动一半的长度
 				start = i - (len - 1) / 2;
 				// 同上
 				end = i + len / 2;
