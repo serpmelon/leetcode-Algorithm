@@ -35,12 +35,34 @@ public class QuickSort extends AbstractSort {
 		quickSort(nums, 0, nums.length - 1);
 	}
 
+	/**
+	 * 
+	 * <p>
+	 * Method ：quickSort
+	 * <p>
+	 * Description :快排思想： 1、选择一个区分点（一般为数组尾节点或者头节点），将数组分成两部分 2、对每个部分重复1中的操作
+	 * 3、直到数组不可分为止
+	 *
+	 * @param nums
+	 * @param start
+	 * @param end
+	 * @author taiyn
+	 *         <p>
+	 *         --------------------------------------------------------------<br>
+	 *         修改履历：<br>
+	 *         <li>2019年4月17日，taiyn，创建方法；<br>
+	 *         --------------------------------------------------------------<br>
+	 *         </p>
+	 */
 	private void quickSort(int[] nums, int start, int end) {
 
+		// 当为一个元素的时候停止
 		if (start >= end)
 			return;
 
+		// 返回区分点的位置
 		int point = partition(nums, start, end);
+		// 对两部分数组继续进行排序
 		quickSort(nums, start, point - 1);
 		quickSort(nums, point + 1, end);
 	}
@@ -66,17 +88,22 @@ public class QuickSort extends AbstractSort {
 	 */
 	private int partition(int[] nums, int start, int end) {
 
+		// 取默认为区分点
 		int point = nums[end];
+		// i指向的是没有排序的元素或者比区分点大的元素（从小到大排序的话）
 		int i = start;
-		for (int j = start; j < end; j++) {
+		for (int j = start; j < end; j++) {// 遍历数组
 
-			if (nums[j] < point) {
+			if (nums[j] < point) {// 当元素比区分点小的时候
 
+				// 交换改元素和i指向的元素
 				ArrayUtil.swap(nums, i, j);
+				// i指针移动，
 				i++;
 			}
 		}
 
+		// 交换区分点和i的位置，当前i指向的就是一个大于区分点的第一个元素，交换之后，区分点左面的都小于区分点
 		ArrayUtil.swap(nums, i, end);
 
 		return i;
@@ -101,21 +128,21 @@ public class QuickSort extends AbstractSort {
 	 *         --------------------------------------------------------------<br>
 	 *         </p>
 	 */
-//	private int partition(int[] nums, int start, int end) {
-//
-//		int point = nums[start];
-//		int i = start + 1;
-//		for (int j = start + 1; j <= end; j++) {
-//
-//			if (nums[j] < point) {
-//
-//				ArrayUtil.swap(nums, i, j);
-//				i++;
-//			}
-//		}
-//
-//		ArrayUtil.swap(nums, i - 1, start);
-//
-//		return i - 1;
-//	}
+	// private int partition(int[] nums, int start, int end) {
+	//
+	// int point = nums[start];
+	// int i = start + 1;
+	// for (int j = start + 1; j <= end; j++) {
+	//
+	// if (nums[j] < point) {
+	//
+	// ArrayUtil.swap(nums, i, j);
+	// i++;
+	// }
+	// }
+	//
+	// ArrayUtil.swap(nums, i - 1, start);
+	//
+	// return i - 1;
+	// }
 }
