@@ -45,6 +45,40 @@ public class FindPeakElement162 {
 		// 没有找到的话就是最后一个值
 		return nums.length - 1;
 	}
-	
-	
+
+	/**
+	 * 
+	 * @author AI
+	 * @desc 时间复杂度O(logN)；思路是二分查找，每次在大的一边查找波峰，因为大的一边一定存在波峰，大的一边一共存在两种情况
+	 *       一是比中间值大，那么由于最后的边界是负无穷，所以肯定有波峰；二是比中间值小，那么中间值就是波峰。而小的一边如果数字 一直大小一直上升
+	 *       则不存在波峰
+	 * 
+	 * @param nums
+	 * @return
+	 *
+	 * @date 2019年4月20日
+	 */
+	public int findPeakElement_1(int[] nums) {
+
+		if (nums == null || nums.length == 0)
+			return -1;
+		if (nums.length == 1)
+			return 0;
+
+		int l = 0;
+		int r = nums.length - 1;
+		while (l < r) {
+
+			int mid = (l + r) / 2;
+			// 比较中间值
+			if (nums[mid] < nums[mid + 1])
+				// 选择大的一边继续比较，下面同理
+				l = mid + 1;
+			else
+				r = mid;
+		}
+
+		// 返回值一定是l = r的时候，所以返回l和r都行
+		return l;
+	}
 }
