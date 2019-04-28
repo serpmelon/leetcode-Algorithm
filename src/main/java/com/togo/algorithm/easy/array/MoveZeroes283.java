@@ -1,6 +1,6 @@
 package com.togo.algorithm.easy.array;
 
-import com.togo.algorithm.sort.util.ArrayUtil;
+import com.togo.algorithm.util.ArrayUtil;
 
 /**
  * 

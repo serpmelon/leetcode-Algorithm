@@ -1,4 +1,4 @@
-package com.togo.algorithm.sort.util;
+package com.togo.algorithm.util;
 
 public class ArrayUtil {
 
