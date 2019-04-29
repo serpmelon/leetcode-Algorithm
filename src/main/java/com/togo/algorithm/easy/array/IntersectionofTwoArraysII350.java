@@ -77,6 +77,5 @@ public class IntersectionofTwoArraysII350 {
 			result[k++] = i;
 
 		return result;
-
 	}
 }
