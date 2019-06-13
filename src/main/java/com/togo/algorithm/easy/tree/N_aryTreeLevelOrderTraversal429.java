@@ -33,7 +33,7 @@ public class N_aryTreeLevelOrderTraversal429 {
 
     /**
      * <pre>
-     * desc : 广度优先，遍历每个节点的所有子节点，并加入队列，循环从队列中获取节点重复上述步骤
+     * desc : 广度优先，遍历每个节点的所有子节点，并加入队列，循环从队列中获取节点重复上述步骤；缺点是每个节点都访问了两次，所以下面的深度优先更快
      * @author : taiyn
      * date : 2019/6/13 13:03
      * @param root
@@ -92,6 +92,56 @@ public class N_aryTreeLevelOrderTraversal429 {
         }
 
         return list;
+    }
+
+    /**
+     * <pre>
+     * desc : 深度优先遍历，每次都从节点一直遍历到叶子为止；这种算法比广度优先快，因为每个节点都只访问一次；
+     * @author : taiyn
+     * date : 2019/6/13 13:20
+     * @param root
+     * @return java.util.List<java.util.List<java.lang.Integer>>
+     * </pre>
+     */
+    public List<List<Integer>> wfsLevelOrder(Node root) {
+
+        List<List<Integer>> doubleList = new ArrayList<>();
+
+        return dfs(root, 0, doubleList);
+    }
+
+    /**
+     * <pre>
+     * desc : 深度遍历递归
+     * @author : taiyn
+     * date : 2019/6/13 13:21
+     * @param [node, level, doubleList]
+     * @return java.util.List<java.util.List<java.lang.Integer>>
+     * </pre>
+     */
+    private List<List<Integer>> dfs(Node node, int level, List<List<Integer>> doubleList) {
+
+        if(node != null){
+
+            // 不存在该层级则创建
+            if(doubleList.size() < level + 1) {
+                doubleList.add(new ArrayList<>());
+            }
+            // 该层级加入数据
+            List list = doubleList.get(level);
+            list.add(node.val);
+
+            // 层级+1
+            level++;
+
+            // 遍历子节点
+            for(Node n : node.children){
+
+                doubleList = dfs(n, level, doubleList);
+            }
+        }
+
+        return doubleList;
     }
 
     class Node {
