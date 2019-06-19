@@ -1,5 +1,7 @@
 package com.togo.algorithm.easy.tree;
 
+import com.togo.algorithm.common.TreeNode;
+
 /**
  * 
  * <p>
@@ -57,15 +59,5 @@ public class MaximumDepthOfBinaryTree104 {
 		int right = maxDepth(root.right);
 
 		return Math.max(left, right) + 1;
-	}
-
-	public static class TreeNode {
-		public int val;
-		public TreeNode left;
-		public TreeNode right;
-
-		public TreeNode(int x) {
-			val = x;
-		}
 	}
 }
