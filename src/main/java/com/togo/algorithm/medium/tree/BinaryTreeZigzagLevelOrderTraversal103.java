@@ -31,7 +31,7 @@ public class BinaryTreeZigzagLevelOrderTraversal103 {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         List<List<Integer>> result = new ArrayList<>();
-        //
+        // 是否从左面开始遍历
         boolean left = true;
 
         while(queue.size() > 0){
