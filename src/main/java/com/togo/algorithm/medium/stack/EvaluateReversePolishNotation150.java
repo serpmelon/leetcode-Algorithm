@@ -128,4 +128,55 @@ public class EvaluateReversePolishNotation150 {
 
         return stack.pop();
     }
+
+
+    /**
+     * <pre>
+     * desc : 原理都一样，使用数组实现栈，速度飞起，而且空间还比之前小。。。。
+     * @author : taiyn
+     * date : 2019-07-02 13:52
+     * @param [tokens]
+     * @return int
+     * </pre>
+     */
+    public int evalRPN(String[] tokens) {
+
+        if (tokens == null || tokens.length == 0)
+            return 0;
+
+        int[] stack = new int[tokens.length];
+        int top = -1;
+
+        for (String s : tokens) {
+
+            int right = 0, left = 0;
+            switch (s) {
+                case "+":
+                    right = stack[top--];
+                    left = stack[top];
+                    stack[top] = right + left;
+                    break;
+                case "-":
+                    right = stack[top--];
+                    left = stack[top];
+                    stack[top] = left - right;
+                    break;
+                case "*":
+                    right = stack[top--];
+                    left = stack[top];
+                    stack[top] = left * right;
+                    break;
+                case "/":
+                    right = stack[top--];
+                    left = stack[top];
+                    stack[top] = left / right;
+                    break;
+                default:
+                    stack[++top] = Integer.parseInt(s);
+                    break;
+            }
+        }
+
+        return stack[top];
+    }
 }
