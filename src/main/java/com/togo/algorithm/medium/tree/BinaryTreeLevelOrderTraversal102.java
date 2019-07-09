@@ -1,9 +1,10 @@
 package com.togo.algorithm.medium.tree;
 
+import com.togo.algorithm.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.togo.algorithm.easy.tree.MaximumDepthOfBinaryTree104.TreeNode;
 
 /**
  * 

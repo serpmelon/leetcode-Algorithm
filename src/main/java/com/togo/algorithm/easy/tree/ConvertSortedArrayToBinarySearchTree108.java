@@ -1,6 +1,7 @@
 package com.togo.algorithm.easy.tree;
 
-import com.togo.algorithm.easy.tree.MaximumDepthOfBinaryTree104.TreeNode;
+
+import com.togo.algorithm.common.TreeNode;
 
 /**
  * 

@@ -3,7 +3,7 @@ package com.togo.algorithm.medium.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.togo.algorithm.easy.tree.MaximumDepthOfBinaryTree104.TreeNode;
+import com.togo.algorithm.common.TreeNode;
 
 /**
  * 
