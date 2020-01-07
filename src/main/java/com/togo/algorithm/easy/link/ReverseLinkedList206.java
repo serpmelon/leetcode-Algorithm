@@ -1,5 +1,7 @@
 package com.togo.algorithm.easy.link;
 
+import com.togo.algorithm.common.ListNode;
+
 /**
  * 
  * <p>
@@ -89,15 +91,6 @@ public class ReverseLinkedList206 {
 		head.next = null;
 
 		return newNode;
-	}
-
-	public static class ListNode {
-		public int val;
-		public ListNode next;
-
-		public ListNode(int x) {
-			val = x;
-		}
 	}
 
 	public static void main(String[] args) {
