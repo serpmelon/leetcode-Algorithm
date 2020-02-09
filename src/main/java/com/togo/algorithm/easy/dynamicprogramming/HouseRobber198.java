@@ -38,8 +38,8 @@ public class HouseRobber198 {
 	 * <p>
 	 * Method ：rob
 	 * <p>
-	 * Description :思路：是否抢劫第n个房子，取决于抢劫n-1和n-2的收益及dp(n) = MAX(dp(n-1), dp(n-2) +
-	 * nums[n]);
+	 * Description :思路：是否抢劫第n个房子，取决于抢劫n-1和n-2的收益
+	 * 既dp(n) = MAX(dp(n-1), dp(n-2) + nums[n]);
 	 *
 	 * @param nums
 	 * @return

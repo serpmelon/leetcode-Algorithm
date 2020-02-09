@@ -1,6 +1,7 @@
 package com.togo.algorithm.medium.link;
 
-import com.togo.algorithm.easy.link.ReverseLinkedList206.ListNode;
+
+import com.togo.algorithm.common.ListNode;
 
 /**
  * 
