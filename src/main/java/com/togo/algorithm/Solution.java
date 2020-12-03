@@ -70,27 +70,30 @@ class Solution {
 //[0.5,0.5,0.2]
 //0
 //2
-        TreeNode root = new TreeNode(1);
-        TreeNode a = new TreeNode(2);
-        TreeNode b = new TreeNode(2);
-        TreeNode c = new TreeNode(3);
-        TreeNode d = new TreeNode(4);
-        TreeNode e = new TreeNode(5);
-        TreeNode f = new TreeNode(3);
-
-        root.left = a;
-        root.right = b;
-        a.left = c;
-        a.right = d;
-        b.left = e;
-        b.left = f;
-        System.out.println(isSymmetric(root));
+//        TreeNode root = new TreeNode(1);
+//        TreeNode a = new TreeNode(2);
+//        TreeNode b = new TreeNode(2);
+//        TreeNode c = new TreeNode(3);
+//        TreeNode d = new TreeNode(4);
+//        TreeNode e = new TreeNode(5);
+//        TreeNode f = new TreeNode(3);
+//
+//        root.left = a;
+//        root.right = b;
+//        a.left = c;
+//        a.right = d;
+//        b.left = e;
+//        b.left = f;
+//        System.out.println(isSymmetric(root));
 //        char[] aa = "".toCharArray();
 //
 //        System.out.println(43024L * 99908L);
 //        int[] a = {43024,99908};
 //        int[] b = {1864};
 //        System.out.println(numTriplets(a, b));;
+
+//        isMatch("aa", "a*");
+        coinChange(new int[]{1, 2147483647}, 2);
     }
 
     public ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode root) {
@@ -131,5 +134,56 @@ class Solution {
         }
 
         return list;
+    }
+
+    public static boolean isMatch(String s, String p) {
+
+        if(s == null && p == null) return true;
+        if(s == null || p == null) return false;
+
+        int sL = s.length(), pL = p.length();
+        boolean[][] dp = new boolean[sL][pL];
+        dp[0][0] = s.charAt(0) == p.charAt(0);
+
+        for(int i = 1; i < sL; i++) {
+            for(int j = 1; j < pL; j++) {
+
+                if(p.charAt(j) == '.') {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else if(p.charAt(j) == '*') {
+                    if(j > 1)
+                        dp[i][j] = dp[i - 1][j - 2] || dp[i - 1][j];
+                    else
+                        dp[i][j] = dp[i - 1][j];
+                } else {
+                    dp[i][j] = dp[i - 1][j - 1] && (s.charAt(i) == p.charAt(j));
+                }
+            }
+        }
+
+        return dp[sL - 1][pL - 1];
+    }
+
+    public static int coinChange(int[] coins, int amount) {
+
+        int[] dp = new int[amount + 1];
+        dp[0] = 0;
+        for(int i = 1; i < amount + 1; i++) {
+
+            dp[i] = amount + 1;
+        }
+        for(int i = 1; i < amount + 1; i++) {
+
+            for(int coin : coins) {
+
+                if(i - coin < 0) {
+                    dp[i] = amount + 1;
+                    continue;
+                }
+                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+            }
+        }
+
+        return dp[amount] == amount + 1 ? -1 : dp[amount];
     }
 }
