@@ -93,7 +93,8 @@ class Solution {
 //        System.out.println(numTriplets(a, b));;
 
 //        isMatch("aa", "a*");
-        coinChange(new int[]{1, 2147483647}, 2);
+//        coinChange(new int[]{1, 2147483647}, 2);
+        maxOperations(new int[]{1,2,3,4}, 5);
     }
 
     public ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode root) {
@@ -185,5 +186,48 @@ class Solution {
         }
 
         return dp[amount] == amount + 1 ? -1 : dp[amount];
+    }
+
+    public static int maxOperations(int[] nums, int k) {
+
+        Arrays.sort(nums);
+        Set<Integer> set = new HashSet<>();
+        int size = nums.length;
+        if(size < 2 || nums[0] + nums[1] > k || nums[size - 1] + nums[size - 2] < k)
+            return 0;
+
+        int midF = 0;
+        int midE = 0;
+        int midCount = 0;
+        for(int i = 0; i < size; i++) {
+            if((double) nums[i] == (double) k / 2) {
+                midF = i;
+                midCount++;
+            }
+            if(nums[i] > k / 2) {
+                if(midF == 0) midF = i;
+
+                midE = i;
+                break;
+            }
+        }
+
+        int count = 0;
+        for(int i = 0; i < midF; i++) {
+            if(nums[i] > k) break;
+            if(set.contains(i)) continue;
+            int tmp = k - nums[i];
+
+            for(int j = midE; j < size; j++) {
+                if(nums[i] + nums[j] > k) break;
+                if(tmp == nums[j] && !set.contains(j) && !set.contains(i)) {
+                    count++;
+                    set.add(j);
+                    set.add(i);
+                }
+            }
+        }
+
+        return count + midCount / 2;
     }
 }
