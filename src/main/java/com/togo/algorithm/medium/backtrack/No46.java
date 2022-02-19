@@ -47,6 +47,7 @@ public class No46 {
 
     /**
      * 回溯就是深度优先遍历dfs. 回溯指的是在搜索后把当前节点删除, 换另一种情况.
+     * 先画决策树, 再想代码
      * @param track
      */
     private void backtrack(List<Integer> track){
@@ -62,12 +63,12 @@ public class No46 {
             if (check[i]) {
                 continue;
             }
-            // 添加元素
+            // 做选择
             track.add(nums[i]);
             check[i] = true;
-            // 回溯, 更深的搜索
+            // 进入下一层决策树
             backtrack(track);
-            // 删除当前元素, 换一种情况
+            // 撤销选择
             track.remove(track.size() - 1);
             check[i] = false;
         }
