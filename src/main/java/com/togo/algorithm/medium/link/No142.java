@@ -1,6 +1,7 @@
-package com.togo.algorithm.easy.link;
+package com.togo.algorithm.medium.link;
 
 import com.togo.algorithm.common.ListNode;
+import com.togo.algorithm.easy.link.No141;
 
 import java.util.HashSet;
 import java.util.Set;
